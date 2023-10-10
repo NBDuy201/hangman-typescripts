@@ -1,27 +1,39 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Typescripts Hangman game
 
-Currently, two official plugins are available:
+Simple game of hangman written in Typescripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Screenshot 2023-10-10 145603](https://github.com/NBDuy201/hangman-typescripts/assets/85396503/e8c6253f-daf3-41f5-8e20-f281572acb8d)
 
-## Expanding the ESLint configuration
+**Game rules:**
+- Guess the correct word by clicking the letters on screen or on your keyboard
+- If you make **6 wrong guesses** then you **LOSE**
+- If you guessed the word in **under 6 wrong guesses** then you **WIN**
+- You can replay again after you **WIN/LOSE**
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Tech Stack
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+React, TailwindCSS
+
+
+## Installation
+
+Navigate to project folder
+```bash
+  Ex: cd ./hangman-typescripts
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Install all dependencies
+
+```bash
+  npm i
+```    
+## Run Locally
+```bash
+  npm run dev
+```
+
+
+## Demo
+https://nbduy201.github.io/hangman-typescripts/
