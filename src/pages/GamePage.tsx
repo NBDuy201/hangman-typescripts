@@ -1,4 +1,3 @@
-import React from "react";
 import HangmanDrawing from "~/components/HangmanDrawing";
 import HangmanKeyboard from "~/components/HangmanKeyboard";
 import HangmanResults from "~/components/HangmanResults";
@@ -24,7 +23,7 @@ const GamePage = () => {
           </p>
         </div>
         {/* Game */}
-        <div className="bg-white p-4 rounded-md flex flex-col justify-center items-center gap-y-4">
+        <div className="bg-white p-4 rounded-md overflow-y-auto flex flex-col items-center text-center gap-y-6">
           <HangmanResults />
           <HangmanDrawing />
           <HangmanWords />

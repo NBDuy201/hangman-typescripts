@@ -1,4 +1,3 @@
-import React from "react";
 import VerticalLine from "./shape/VerticalLine";
 import HorizontalLine from "./shape/HorizontalLine";
 import Circle from "./shape/Circle";
@@ -15,27 +14,27 @@ const Head = () => {
 };
 const Body = () => {
   return (
-    <VerticalLine className="absolute right-0 top-[calc(20%+3.5rem)] !h-[25%]" />
+    <VerticalLine className="absolute right-0 top-[calc(20%+3.5rem)] translate-x-1/2 !h-[20%]" />
   );
 };
 const LeftArm = () => {
   return (
-    <HorizontalLine className="absolute top-[calc(30%+3.5rem)] -right-[1%] !w-[10%] origin-top -rotate-45" />
+    <HorizontalLine className="absolute top-[calc(25%+3.5rem)] -right-0 !w-[10%] origin-top-right -rotate-45" />
   );
 };
 const RightArm = () => {
   return (
-    <HorizontalLine className="absolute top-[calc(30%+3.5rem)] -right-[8.5%] !w-[10%] origin-top rotate-45" />
+    <HorizontalLine className="absolute top-[calc(25%+3.5rem)] -right-[10%] !w-[10%] origin-top-left rotate-45" />
   );
 };
 const LeftLeg = () => {
   return (
-    <HorizontalLine className="absolute top-[calc(25%+20%+3%+3.5rem)] -right-[1%] !w-[10%] origin-top -rotate-45" />
+    <HorizontalLine className="absolute top-[calc(20%+20%+3.2rem)] -right-0 !w-[10%] origin-bottom-right -rotate-45" />
   );
 };
 const RightLeg = () => {
   return (
-    <HorizontalLine className="absolute top-[calc(25%+20%+3%+3.5rem)] -right-[8.5%] !w-[10%] origin-top rotate-45" />
+    <HorizontalLine className="absolute top-[calc(20%+20%+3.2rem)] -right-[10%] !w-[10%] origin-bottom-left rotate-45" />
   );
 };
 
@@ -53,7 +52,7 @@ const BODY_PARTS = [
 const HangmanDrawing = () => {
   const { numberOfWrongGuesses } = useHangman();
   return (
-    <div className="relative h-[80%] w-[60%] flex items-center justify-center -translate-x-1/4">
+    <div className="relative h-[80%] w-[60%] min-h-[200px] flex items-center justify-center -translate-x-1/4">
       {/* Execution shape */}
       <VerticalLine />
       <HorizontalLine className="absolute bottom-0 !w-[40%]" />

@@ -1,11 +1,10 @@
-import React from "react";
 import { useHangman } from "~/context/HangmanContext";
 
 const HangmanWords = () => {
   const { guestedWords, winWords } = useHangman();
 
   return (
-    <div className="uppercase flex gap-x-4 font-bold text-4xl mb-8">
+    <div className="uppercase flex gap-x-4 font-bold text-4xl mb-4 !font-mono">
       {winWords.split("").map((letter, index) => (
         <span
           key={index}

@@ -9,11 +9,27 @@ function generateAlphabet() {
 const KEYS = generateAlphabet();
 
 const HangmanKeyboard = () => {
-  const { setGuestedWords, guestedWords, gameResults } = useHangman();
+  const { guestedWords, gameResults, addWord } = useHangman();
+
+  React.useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      const { key } = e;
+
+      if (!key.match(/^[a-z]$/)) return;
+
+      e.preventDefault();
+      addWord(key);
+    }
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [addWord]);
 
   return (
     <div className="flex flex-wrap justify-center gap-4 text-xl">
-      {/* <div className="grid grid-cols-[repeat(auto-fit,minmax(75px,_1fr))] text-center gap-4 text-4xl"> */}
       {KEYS.map((key) => {
         const isKeyDisable =
           guestedWords.includes(key) ||
@@ -27,7 +43,7 @@ const HangmanKeyboard = () => {
                 ? "opacity-20 cursor-not-allowed"
                 : "hover:bg-primary hover:text-white"
             }`}
-            onClick={() => setGuestedWords((prv) => [...prv, key])}
+            onClick={() => addWord(key)}
             disabled={isKeyDisable}
           >
             {key}
